@@ -1,6 +1,7 @@
 import math
 import numpy as np
 
+
 def demo(x):
     '''
     This is a demo function
@@ -11,8 +12,8 @@ def demo(x):
         x*x (int)
     '''
 
-    ## Code Here
-    return None
+    return np.square(x)
+
 
 def is_palindrome(string):
     '''
@@ -24,8 +25,14 @@ def is_palindrome(string):
         flag (bool)
     '''
 
-    ## Code Here
-    return None
+    rev=""
+    for i in range(len(string)-1,-1,-1):
+        rev=rev+string[i]
+    if(rev==string):
+        return True
+    else:
+        return False
+
 
 def sqrt_of_numbers(num):
     '''
@@ -36,8 +43,8 @@ def sqrt_of_numbers(num):
         sqroot (float)
     '''
 
-    ## Code Here
-    return None
+    return np.sqrt(num)
+
 
 def Maximum(arr):
     '''
@@ -49,8 +56,9 @@ def Maximum(arr):
         Max1, Max2 (int, int)
     '''
 
-    ## Code Here
-    return None
+    arr.sort()
+    return arr[len(arr)-1], arr[len(arr)-2]
+
 
 def even_sort(arr):
     '''
@@ -66,8 +74,17 @@ def even_sort(arr):
         ## This is any even number is smaller than any odd number
     '''
 
-    ## Code Here
-    return None
+    even=[]
+    odd=[]
+    for i in range(0,len(arr)):
+        if(arr[i]%2==0):
+            even.insert(0,arr[i])
+        else:
+            odd.insert(0,arr[i])
+    even.sort()
+    odd.sort()
+    ans=even+odd
+    return ans
 
 
 def eqn_solver(A, B, C):
@@ -86,6 +103,17 @@ def eqn_solver(A, B, C):
     returns:
         x, y (float, float)
     '''
+    d=(A[0]*B[1])-(A[1]*B[0])
+    dx=(C[0]*B[1])-(C[1]*B[0])
+    dy=(A[0]*C[1])-(C[0]*A[1])
+    if(d==0 and dx==0 and dy==0):
+        return "System is consistent with infinite solutions"
+    elif(d==0):
+        return "System is inconsistent with no possible solutions"
+    else:
+        x=dx/d
+        y=dy/d
+        return x,y
 
-    ## Code Here
-    return None
+
+
