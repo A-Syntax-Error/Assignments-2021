@@ -10,7 +10,6 @@ def demo(x):
         x (int)
     returns:
         x*x (int)
-
     '''
 
     return np.square(x)
@@ -116,7 +115,5 @@ def eqn_solver(A, B, C):
         y=dy/d
         return x,y
 
-    ##i have solved all questions
-    ## Comment 2nd line for testing
 
 
